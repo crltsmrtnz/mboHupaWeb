@@ -1,0 +1,60 @@
+----------------------- 
+	C:\ambientes 
+-----------------------
+
+=Creamos la carpeta env.
+	$python -m venv env 
+
+=Activamos el entorno virtual.
+#Para eso, vamos hasta el directorio.
+	$C:\env\Scripts\activate
+
+=Con el entorno virtual activado, Instalamos Django.
+#(env) 
+	$C:\env>python -m pip install django
+
+=Asegurarnos de que tengamos Django en el entorno virtual con.
+	$python -m pip freeze
+
+-------------------------------------------------
+		COMENZAMOS EL PROYECTO mboHupa
+-------------------------------------------------
+	#Cambiamos de ruta a C:\proyectosDjango
+
+=iniciamos el proyecto.
+	$(env) C:\proyecto>django-admin.py startproject mboHupa
+
+=Entramos a la carpeta mboHupa
+#creamos la app core
+	$(env) C:\proyectosDjango\mboHupa>django-admin.py startapp core
+		
+=Dentro de la app core, creamos las views.py para 
+from django.shortcuts import HttpResponse
+
+def home (request):
+    return HttpResponse("inicio")
+def about (request):
+    return HttpResponse("historia")
+def services (request):
+    return HttpResponse("servicio")
+def store (request):
+    return HttpResponse("visitanos")
+def contact (request):
+    return HttpResponse("contacto")
+def blog (request):
+    return HttpResponse("blog")
+def sample (request):
+    return HttpResponse("sample")
+
+
+=Dentro de la app core, creamos las urls.py para 
+from core import views
+	path('', views.home, name='home'),
+    path('about/', views.about),
+    path('services/', views.services),
+    path('store/', views.store),
+    path('contact/', views.contact),    
+    path('blog/', views.blog),
+    path('sample/', views.sample),    
+
+
