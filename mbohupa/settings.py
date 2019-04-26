@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'ckeditor',
     'core',
+    'contact',
     'pages.apps.PagesConfig',
     'services.apps.ServicesConfig',
     'social.apps.SocialConfig',
@@ -142,3 +143,12 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+
+
+
+#Email config
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'ef6a156f1f6976'
+EMAIL_HOST_PASSWORD = '85ed7fc0643911'
+EMAIL_PORT = '2525'
