@@ -1,0 +1,39 @@
+{% extends 'core/base-2.html' %} {% block content %}
+<br>
+ <h1>Listado de solicitudes</h1>
+<table class="table table-bordered  text-center">
+    <thead>
+            <tr>
+                    <th>#Solicitud</th>
+                    <th>Adoptante</th>
+                    <th>N°. Mascotas</th>
+                    <th>Razones</th>
+                    <th>Acciones</th>
+            </tr>
+    </thead>
+    <tbody>
+            {% if object_list %}
+            {% for solicitud in object_list %}
+
+            <tr>
+                    <td>{{solicitud.id}}</td>
+                    <td>{{solicitud.persona.nombre}} {{solicitud.persona.apellidos}}</td>
+                    <td>{{solicitud.numero_mascotas}}</td>
+                    <td>{{solicitud.razones}}</td>
+                    <td>
+                        <a href="{% url 'solicitud_editar' solicitud.id %}" class="btn btn-outline-warning">Editar</a>
+                        <a href="{% url 'solicitud_eliminar' solicitud.id %}" class="btn btn-outline-danger">Eliminar</a>
+       				</td>
+            </tr>
+
+            {% endfor %}
+
+            {% else %}
+            <h1 class="text-center">
+                <strong>No hay registros de solicitudes</strong>
+            </h1>
+            
+            {% endif %}
+    </tbody>
+</table>
+{% endblock %}

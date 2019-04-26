@@ -1,0 +1,40 @@
+{% extends 'core/base-2.html' %}
+
+
+
+{% block title %}
+mascota
+{% endblock %}
+
+
+{% block extralink %}
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg {
+            /* The image used */
+            background: url("/static/core2/img/animalSilhouettes.jpeg") ;
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <div class="bg"  style="background-image: url({% static 'core2/img/animalSilhouettes.jpg' %})">
+        <h2>Contenido de la aplicacion mascota</h2>
+    </div>
+
+
+
+{% endblock %}
