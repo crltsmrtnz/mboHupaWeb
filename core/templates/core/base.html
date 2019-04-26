@@ -5,11 +5,11 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="mbohupa es una plataforma para adopcion de mascotas">
+    <meta name="author" content="CrltsMrtnz">
 
     
-    <title>{% block title %}{% endblock %} | La Caffettiera</title>
+    <title>{% block title %}{% endblock %} | mboHupa</title>
 
     
     <!-- Carga de Ficheros estaticos -->
@@ -26,19 +26,22 @@
     <!-- Estilos -->
     <link href="{% static 'core/css/business-casual.css' %}" rel="stylesheet">
 
+    <!-- Estilos Personalizados-->
+    <link href="{% static 'core/css/estilos.css' %}" rel="stylesheet">
+
   </head>
 
   <body>
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-      <span class="site-heading-upper text-primary mb-3">L'autentico caffè d'italia</span>
-      <span class="site-heading-lower">La Caffettiera</span>
+      <span class="site-heading-upper text-primary mb-3">Adoptá una mascota</span>
+      <span class="site-heading-lower text-lowercase">mboHupa</span>
     </h1>
 
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">La Caffettiera</a>
+        <a class="navbar-brand  text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">mboHupa</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -119,7 +122,7 @@
           {% endfor %}
         </p>
         
-        <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
+        <p class="m-0 mbt1">&copy; mboHupa 2019</p>
       </div>
 	  </footer>
 
