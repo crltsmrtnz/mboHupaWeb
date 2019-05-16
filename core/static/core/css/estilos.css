@@ -16,7 +16,7 @@ body {
     width: 80%;
 }
 .navbar > .container, .navbar > .container-fluid {
-    justify-content:inherit;
+    justify-content:space-between;
 
 }
 #mainNav .navbar-nav .nav-item .nav-link {

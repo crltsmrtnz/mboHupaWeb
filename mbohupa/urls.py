@@ -34,7 +34,8 @@ urlpatterns = [
     path('logout/',logout_then_login, name="logout",),
     
     #Path Auth
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),    
+    path('accounts/', include('registration.urls')),
 ]
 
 if settings.DEBUG:

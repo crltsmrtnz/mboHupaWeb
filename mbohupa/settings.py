@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'ckeditor',
     'core',
     'contact',
-    'usuario',
     'pages.apps.PagesConfig',
     'services.apps.ServicesConfig',
     'social.apps.SocialConfig',
@@ -156,8 +155,19 @@ CKEDITOR_CONFIGS = {
 
 
 #Email config MAILTAP
+"""
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = 'ef6a156f1f6976'
 EMAIL_HOST_PASSWORD = '85ed7fc0643911'
 EMAIL_PORT = '2525'
+"""
+
+
+#Email
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+else:
+    #aqui hay que configurar un email real para produccion
+    pass
 
