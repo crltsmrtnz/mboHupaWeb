@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,6 +126,10 @@ USE_L10N = True
 USE_TZ = True
 
 
+#Auth redirect
+LOGIN_REDIRECT_URL = 'blog'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
@@ -154,3 +159,4 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = 'ef6a156f1f6976'
 EMAIL_HOST_PASSWORD = '85ed7fc0643911'
 EMAIL_PORT = '2525'
+

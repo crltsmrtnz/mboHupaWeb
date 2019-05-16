@@ -32,6 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('logout/',logout_then_login, name="logout"),
+    
+    #Path Auth
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:

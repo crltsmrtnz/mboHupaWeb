@@ -62,14 +62,14 @@
             <li class="nav-item px-lg-4 {% if request.path == '/store/' %}active{% endif %}">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'store' %}">Visítanos</a>
             </li>
-            <li class="nav-item px-lg-4 {% if request.path == '/contact/' %}active{% endif %}">
+            <li class="nav-item px-lg-4 {% if request.path == '/solicitud/nueva/' %}active{% endif %}">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'contact' %}">Contacto</a>
             </li>
             <li class="nav-item px-lg-4 {% if request.path|slice:":6" == '/blog/' %}active{% endif %}">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
             </li>
             
-            <li class="nav-item px-lg-4 dropdown {% if request.path|slice:":6" == '/mascota/' %}active{% endif %}">
+            <li class="nav-item px-lg-4 dropdown">
               <a class="nav-link dropdown-toggle text-uppercase text-expanded" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Mascota
               </a>
@@ -80,12 +80,12 @@
               </div>
             </li>
 
-            <li class="nav-item px-lg-4 dropdown {% if request.path|slice:":6" == '/adopcion/' %}active{% endif %}">
+            <li class="nav-item px-lg-4 dropdown ">
               <a class="nav-link dropdown-toggle text-uppercase text-expanded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Adopción
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'solicitud_crear' %}">Solicitar</a>
+                <a class="dropdown-item " href="{% url 'solicitud_crear' %}">Solicitar</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'solicitud_listar' %}">Listar Solicitudes</a>
               </div>
