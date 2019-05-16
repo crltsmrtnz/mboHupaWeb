@@ -1,39 +1,86 @@
-{% extends 'core/base-2.html' %} {% block content %}
-<br>
- <h1>Listado de solicitudes</h1>
-<table class="table table-bordered  text-center">
-    <thead>
-            <tr>
-                    <th>#Solicitud</th>
-                    <th>Adoptante</th>
-                    <th>N°. Mascotas</th>
-                    <th>Razones</th>
-                    <th>Acciones</th>
-            </tr>
-    </thead>
-    <tbody>
-            {% if object_list %}
-            {% for solicitud in object_list %}
+{% extends 'core/base.html' %} {% block content %}
+    <div class="container">
+            
+        <br>
+        <h1>Listado de solicitudes</h1>
+        <table class="table table-bordered  text-center">
+        <thead>
+                <tr>
+                        <th>#Solicitud</th>
+                        <th>Adoptante</th>
+                        <th>N°. Mascotas</th>
+                        <th>Razones</th>
+                        <th>Acciones</th>
+                </tr>
+        </thead>
+        <tbody>
+                {% if object_list %}
+                {% for solicitud in object_list %}
 
-            <tr>
-                    <td>{{solicitud.id}}</td>
-                    <td>{{solicitud.persona.nombre}} {{solicitud.persona.apellidos}}</td>
-                    <td>{{solicitud.numero_mascotas}}</td>
-                    <td>{{solicitud.razones}}</td>
-                    <td>
-                        <a href="{% url 'solicitud_editar' solicitud.id %}" class="btn btn-outline-warning">Editar</a>
-                        <a href="{% url 'solicitud_eliminar' solicitud.id %}" class="btn btn-outline-danger">Eliminar</a>
-       				</td>
-            </tr>
+                <tr>
+                        <td>{{solicitud.id}}</td>
+                        <td>{{solicitud.persona.nombre}} {{solicitud.persona.apellidos}}</td>
+                        <td>{{solicitud.numero_mascotas}}</td>
+                        <td>{{solicitud.razones}}</td>
+                        <td>
+                                <a href="{% url 'solicitud_editar' solicitud.id %}" class="btn btn-outline-warning">Editar</a>
+                                <a href="{% url 'solicitud_eliminar' solicitud.id %}" class="btn btn-outline-danger">Eliminar</a>
+                                        </td>
+                </tr>
 
+                {% endfor %}
+
+                {% else %}
+                <h1 class="text-center">
+                        <strong>No hay registros de solicitudes</strong>
+                </h1>
+                
+                {% endif %}
+        </tbody>
+        </table>
+        <!-- Pagination -->
+    {% if is_paginated %}
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination-lg justify-content-center">
+
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" style="color:rgba(47, 23, 15, 0.9);" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% for i in paginator.page_range %}
+                {% if page_obj.number == i %}
+                    <li class="page-item">
+                        <a class="page-link" style="color:rgba(47, 23, 15, 0.9); background-color: #e6a756 ;" href="?page={{ i }}">
+                            {{ i }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" style="color:rgba(47, 23, 15, 0.9);" href="?page={{ i }}">
+                            {{ i }}
+                        </a>
+                    </li>
+                {% endif %}
             {% endfor %}
 
-            {% else %}
-            <h1 class="text-center">
-                <strong>No hay registros de solicitudes</strong>
-            </h1>
-            
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" style="color:rgba(47, 23, 15, 0.9);" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                </li>
             {% endif %}
-    </tbody>
-</table>
+
+        </ul>
+    </nav>
+
+{% endif %}
+    </div>
 {% endblock %}

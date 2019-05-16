@@ -1,18 +1,22 @@
-{% extends 'core/base-2.html' %}
+{% extends 'core/base.html' %}
 
 {% block content %}
-<form method="post">
-	{% csrf_token %}
+	<div class="container">
+		
+		<form method="post">
+			{% csrf_token %}
 
-	<h3>Desea eliminar la solicitud de
-		<strong>
-			"{{ object.persona.nombre }}{{ object.persona.apellidos }}"
-		</strong>
-	</h3>
+			<h3>Desea eliminar la solicitud de
+				<strong>
+					"{{ object.persona.nombre }}{{ object.persona.apellidos }}"
+				</strong>
+			</h3>
 
-	<button class="btn btn-outline-danger" type='submit'>Si, eliminar</button>
-	<a class="btn btn-outline-secondary" href="{% url 'solicitud_listar' %}">Cancelar</a>
+			<button class="btn btn-outline-danger" type='submit'>Si, eliminar</button>
+			<a class="btn btn-outline-secondary" href="{% url 'solicitud_listar' %}">Cancelar</a>
 
-</form>
+		</form>
+		
+	</div>
 {% endblock %}
 

@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-
+from django.contrib.auth.views import logout_then_login
 
 
 urlpatterns = [
@@ -30,6 +30,8 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('usuario/', include('usuario.urls')),
     path('admin/', admin.site.urls),
+
+    path('logout/',logout_then_login, name="logout"),
 ]
 
 if settings.DEBUG:

@@ -134,7 +134,8 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# CkEditor
+
+
 # Ckeditor
 CKEDITOR_CONFIGS = {
     'default': {
@@ -148,7 +149,7 @@ CKEDITOR_CONFIGS = {
 }
 
 
-#Email config
+#Email config MAILTAP
 EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = 'ef6a156f1f6976'
 EMAIL_HOST_PASSWORD = '85ed7fc0643911'

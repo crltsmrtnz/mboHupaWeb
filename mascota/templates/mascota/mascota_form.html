@@ -1,10 +1,14 @@
-{% extends 'core/base-2.html' %}
+{% extends 'core/base.html' %}
 
 
 {% block content %}
-<form method="post">
-	{% csrf_token %}
-	{{ form.as_p}}
-	<button type="submit">Guardar</button>
-</form>
+<div class="container">
+	<br>
+	<h1>Registrar mascota</h1>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p}}
+		<button class="btn btn-primary" type="submit">Guardar</button>
+	</form>
+</div>
 {% endblock %}
