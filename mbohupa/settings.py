@@ -128,6 +128,7 @@ USE_TZ = True
 
 #Auth redirect
 LOGIN_REDIRECT_URL = 'blog'
+LOGOUT_REDIRECT_URL = 'home'
 
 
 # Static files (CSS, JavaScript, Images)
