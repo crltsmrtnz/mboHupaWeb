@@ -7,12 +7,12 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-  }
-  .intro .intro-img {
+}
+.intro .intro-img {
     width: 63%;
 }
 
-  .product-item .product-item-img {
+.product-item .product-item-img {
     width: 80%;
 }
 .navbar > .container, .navbar > .container-fluid {
@@ -70,3 +70,4 @@ body {
 @media (max-width: 1199px) { ... }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { ... }
+

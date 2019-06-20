@@ -75,7 +75,7 @@
               <a class="nav-link dropdown-toggle text-uppercase text-expanded" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Mascota
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'mascota_crear' %}">Registrar</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'mascota_listar' %}">Listar Mascotas</a>
@@ -86,7 +86,7 @@
               <a class="nav-link dropdown-toggle text-uppercase text-expanded" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Adopción
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item " href="{% url 'solicitud_crear' %}">Solicitar</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'solicitud_listar' %}">Listar Solicitudes</a>
@@ -103,6 +103,9 @@
                   <a class="nav-link text-uppercase text-expanded" href="{% url 'signup' %}">Registrarse</a>
                 </li>
               {% else %}
+              <li class="nav-item px-lg-2 {% if request.path == 'profile' %}active{% endif %}">
+                  <a class="nav-link text-uppercase text-expanded" href="{% url 'profile' %}">Perfil</a>
+                </li>
                 <li class="nav-item px-lg-2 {% if request.path == 'logout' %}active{% endif %}">
                   <a class="nav-link text-uppercase text-expanded" href="{% url 'logout' %}">Salir</a>
                 </li>
@@ -157,17 +160,14 @@
           {% endif %}
         </p>
         
-        <p class="m-0 mbt">
-        	<!-- 
-           <a href="sample.html" class="link">Política de privacidad</a> 
-        	 <a href="sample.html" class="link">Aviso legal</a> 
-           <a href="sample.html" class="link">Cookies</a>
-          -->
-          
+        <p class="m-0 mbt">          
           {% load pages_extras %}
           {% get_page_list as page_list %}
           {% for page in page_list %}
-            <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{page.title}}</a> {% if not forloop.last %}·{% endif %} 
+            <a href="{% url 'page' page.id page.title|slugify %}" class="link">
+              {{page.title}}
+            </a> 
+            {% if not forloop.last %}·{% endif %} 
           {% endfor %}
         </p>
         
